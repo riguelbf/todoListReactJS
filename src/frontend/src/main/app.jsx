@@ -3,7 +3,7 @@ import 'modules/font-awesome/css/font-awesome.min.css';
 
 import React, { Component } from 'react';
 import Todo from './../todo/todo';
-import About from './../todo/about';
+import About from './../about/about';
 
 class App extends Component {
     render() {
