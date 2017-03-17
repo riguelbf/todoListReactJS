@@ -1,23 +1,21 @@
-import 'modules/bootstrap/dist/css/bootstrap.min.css'
-import 'modules/font-awesome/css/font-awesome.min.css'
+import 'modules/bootstrap/dist/css/bootstrap.min.css';
+import 'modules/font-awesome/css/font-awesome.min.css';
 
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import Todo from './../todo/todo';
+import About from './../todo/about';
 
-
-export default class App extends React.Component{
-
-    constructor(props) {
-        super(props);
+class App extends Component {
+    render() {
+        return (
+            <div>
+                <Todo />        
+                <About />   
+            </div>
+        );
     }
+}
 
-    render(){
-       return (
-        <div class='container'>
-            <h1>Test ok!</h1>
-            <button className='btn-primary'>test </button>     
-        </div>
-       )
-    }
-} 
+export default App; 
 
 
