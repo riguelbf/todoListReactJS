@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import PageHeader from './../template/pageHeader';
 
 class Todo extends Component {
     render() {
         return (
             <div className='container'>
-                Todo
+                <PageHeader name='Todo' small='task' />
             </div>
         );
     }
