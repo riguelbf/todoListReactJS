@@ -7,7 +7,7 @@ class TodoForm extends Component {
         return (
             <div role='form' className='todoForm' >
                 <div className='col-xs-12 col-sm-9 col-md-10'>
-                    <input id='description' className='form-control' placeholder='Adicione uma tarefa' type="text" />
+                    <input id='description' className='form-control' placeholder='Adicione uma tarefa' type="text" onChange={this.props.handleChange}/>
                 </div>
                 <div className='col-xs-12 col-sm-3 col-md-2'>
                     <IconButton style='primary' onClick={this.props.handleAdd} icon='plus' />
