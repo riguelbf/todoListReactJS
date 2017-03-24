@@ -19,13 +19,13 @@ class TotoList extends Component {
                     <td>
                         <IconButton style='warning'
                             icon='check'
-                            onclick={() => this.props.handMarkAsComplete(item._id)} />
+                            onClick={() => this.props.handleMarkAsDone(item)} />
                         <IconButton style='success'
                             icon='undo'
-                            onclick={() => this.props.handleMarkAsPending(item._id)} />
+                            onClick={() => this.props.handleMarkAsPending(item)} />
                         <IconButton style='danger'
                             icon='trash-o'
-                            onclick={() => this.props.handleDelete(item._id)} />
+                            onClick={() => this.props.handleDelete(item._id)} />
                     </td>
                 </tr>
             ))

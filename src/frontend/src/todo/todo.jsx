@@ -11,7 +11,9 @@ class Todo extends Component {
         this.state = { _id: 0, description: '', list: [] };
         this.handleChange = this.handleChange.bind(this);
         this.handleAdd = this.handleAdd.bind(this);
-        this.refresh = this.refresh.bind(this);
+        this.handleMarkAsDone = this.handleMarkAsDone.bind(this);
+        this.handleMarkAsPending= this.handleMarkAsPending.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
     }
 
 
@@ -25,22 +27,32 @@ class Todo extends Component {
 
     handleAdd() {
         this.todoList.push(this.state);
-        console.log(this.todoList);
         this.refresh();
     }
 
     handleDelete(id) {
-        console.log('delete');
-        this.todoList = this.todoList.filter((item) => { return  item._id != id; });
+        this.todoList = this.todoList.filter((item) => { item._id != id });
         this.refresh();
+    }
+
+    handleMarkAsDone(todo){
+        console.log('done');
+    }
+
+    handleMarkAsPending(todo){
+        console.log('pending');
     }
 
     render() {
         return (
             <div className='container'>
                 <PageHeader name='Todo' small='task' />
-                <TodoForm handleAdd={this.handleAdd} handleChange={ this.handleChange } />
-                <TodoList list={this.state.list} handleDelete={ this.handleDelete } />
+                <TodoForm handleAdd={ this.handleAdd } 
+                          handleChange={ this.handleChange } />
+                <TodoList list={ this.state.list } 
+                          handleDelete={ this.handleDelete } 
+                          handleMarkAsDone={ this.handleMarkAsDone }
+                          handleMarkAsPending={ this.handleMarkAsPending }/>
             </div>
         );
     }
